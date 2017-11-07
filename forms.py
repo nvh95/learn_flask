@@ -1,8 +1,8 @@
-from flask_wtf import Form
+from flask_wtf import FlaskForm
 from wtforms.fields import StringField
-from flask.ext.wtf.html5 import URLField
+from wtforms.fields.html5 import URLField
 from wtforms.validators import DataRequired, url
 
-class BookmarkForm(Form):
+class BookmarkForm(FlaskForm):
     url = URLField('url', validators=[DataRequired(), url()])
     description = StringField('description')
