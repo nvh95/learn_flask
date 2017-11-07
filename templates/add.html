@@ -4,13 +4,26 @@
 {% endblock %}
 
 {% block content %}
-    <form action="" method="post">
-        <div class="form-group">
-            <label for="url">Add bookmark</label>
-            <input class="form-control" type="text" name="url">
-        </div>
-        <button type="submit" class="btn btn-primary">Save</button>
-    </form>
+    <section>
+        <h1>Add a new URL</h1>
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <table>
+                <tr>
+                    <td>Please enter your bookmark here:</td>
+                    <td>{{ form.url(size=50) }}</td>
+                </tr>
+                <tr>
+                    <td>Add an description</td>
+                    <td>{{ form.description(size=50) }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+    </section>
 {% endblock %}
 
 {% block sidebar %}

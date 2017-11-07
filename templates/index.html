@@ -8,11 +8,17 @@ Thermos -- Welcome
     <article>
         <header>
             <h1>Welcome</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet?</p>
+            <p>Simple social bookmarking site.</p>
         </header>
         <section>
-            <h3>article</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur?</p>
+            <h3>Recently added</h3>
+            {% if new_bookmarks %}
+                <ul>
+                {% for bm in new_bookmarks %}
+                    <li>{{ bm.user }} added <a href="{{ bm.url }}">{{ bm.url }}</a></li>
+                {% endfor %}
+                </ul>
+            {% endif %}
         </section>
         <section>
             <h3>Announcement</h3>
