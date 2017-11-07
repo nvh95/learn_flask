@@ -3,6 +3,7 @@ from wtforms.fields import StringField
 from wtforms.fields.html5 import URLField
 from wtforms.validators import DataRequired, url
 
+
 class BookmarkForm(FlaskForm):
-    url = URLField('url', validators=[DataRequired(), url()])
-    description = StringField('description')
+    url = URLField('Your URL: ', validators=[DataRequired(), url()])
+    description = StringField('Description: ')
