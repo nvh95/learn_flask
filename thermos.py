@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = '\x9c\xf9\xdd\x92\xed\x0c\x13%\xf9%z8\x02\xaa\x9f\xae\xc3\xf0E\xa3\x91\xffs\x16'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'thermos.db')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 bookmarks = []
